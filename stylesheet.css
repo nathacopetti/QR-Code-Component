@@ -1,0 +1,84 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+/*reset CSS seletor curinga + pseudo-elements, border-box para ficar com o tamanho exato que informamos nas propriedades*/
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Outfit", sans-serif;
+}
+/*reset CSS seletor curinga*/
+
+:root {
+    --white: hsl(0, 0%, 100%);
+    --slate-300: hsl(212, 45%, 89%);
+    --slate-500: hsl(216, 15%, 48%);
+    --slate-900: hsl(218, 44%, 22%);
+}
+
+body {
+    background-color: var(--slate-300);
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* distribui main e attribution nas extremidades */
+    flex-direction: column;
+    min-height: 100vh; /*-- Com min-height: 100vh O body passa a ocupar a altura total da tela
+*/
+    padding: 1rem;
+}
+
+.main-content {
+    background-color: var(--white);
+    display: inline-flex; 
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 1rem;
+    margin: auto 0; /*entraliza verticalmente o conteúdo */
+    max-width: 320px; /*limita a largura do card */
+    gap: 1rem;
+    text-align: center;
+}
+
+.main-content-image {
+    border-radius: 20px;
+    width: 100%; /* imagem ocupa toda a largura do card */
+}
+
+
+.main-content-heading {
+    font-weight: 700;
+    font-size: 20px;
+    padding: 0 15px;
+}
+
+.main-content-paragraph {
+    font-weight: 400;
+    font-size: 15px;
+    color: var(--slate-500);
+    padding: 0 15px;
+    margin: 0 0 15px 0;
+}
+
+.attribution { 
+    font-size: 11px; 
+    margin-top: auto;
+    text-align: center;
+    padding: 1rem;
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+@media (max-width: 375px) {
+    .main-content-heading {
+        font-size: 1rem;
+    }
+    .main-content-paragraph {
+        font-size: 0.85rem;
+    }
+}
